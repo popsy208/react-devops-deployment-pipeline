@@ -1,70 +1,145 @@
-# Getting Started with Create React App
+# 🚀 React DevOps CI/CD Deployment Pipeline
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A production-ready DevOps project demonstrating automated deployment of a React application using Docker containerization, Terraform Infrastructure as Code (IaC), AWS cloud services, and CI/CD automation.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Project Overview
 
-### `npm start`
+This project showcases an end-to-end DevOps workflow for deploying a modern React application to AWS using industry-standard DevOps tools and practices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The deployment pipeline automates:
+- Application build process
+- Docker image creation
+- Infrastructure provisioning with Terraform
+- Continuous Integration & Continuous Deployment (CI/CD)
+- Cloud deployment on AWS EC2
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Technology | Purpose |
+|---|---|
+| React | Frontend Framework |
+| Docker | Application Containerization |
+| Terraform | Infrastructure as Code |
+| AWS EC2 | Cloud Hosting |
+| GitHub Actions | CI/CD Automation |
+| Nginx | Web Server |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ Architecture Workflow
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```text
+Developer Push → GitHub Repository → CI/CD Pipeline →
+Docker Build → Terraform Provisioning →
+AWS EC2 Deployment → Live React Application
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+project-root/
+│
+├── .github/workflows/ # CI/CD Pipeline Configuration
+├── terraform/ # Terraform Infrastructure Files
+├── src/ # React Application Source Code
+├── public/ # Static Public Assets
+├── Dockerfile # Docker Image Configuration
+├── nginx.conf # Nginx Configuration
+├── package.json # React Dependencies
+└── README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🐳 Docker Implementation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application is containerized using Docker to ensure:
+- Consistent deployment environments
+- Portability across systems
+- Simplified deployment workflow
+- Scalability and maintainability
 
-## Learn More
+### Build Docker Image
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+docker build -t react-devops-app .
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Run Docker Container
 
-### Code Splitting
+```bash
+docker run -d -p 80:80 react-devops-app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## ☁️ Terraform Infrastructure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Terraform is used to provision AWS infrastructure including:
+- EC2 Instance
+- Security Groups
+- Networking Configuration
 
-### Making a Progressive Web App
+### Initialize Terraform
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+terraform init
+```
 
-### Advanced Configuration
+### Apply Infrastructure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+terraform apply
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔄 CI/CD Pipeline
 
-### `npm run build` fails to minify
+The CI/CD pipeline automates:
+- Code integration
+- Docker image build
+- Infrastructure deployment
+- Application deployment to AWS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Pipeline Workflow
+1. Push code to GitHub
+2. GitHub Actions triggers workflow
+3. Docker image is built
+4. Terraform provisions infrastructure
+5. Application deploys automatically to AWS EC2
+
+---
+
+## 🌍 Deployment
+
+Application deployed on AWS EC2 using:
+- Docker containers
+- Automated CI/CD workflows
+- Infrastructure as Code principles
+
+---
+
+## 🎯 Key DevOps Concepts Demonstrated
+
+- Infrastructure as Code (IaC)
+- Containerization
+- Cloud Deployment
+- Continuous Integration
+- Continuous Deployment
+- Automated Infrastructure Provisioning
+- Production Deployment Workflow
+
+
+
+---
+
+## 📌 Repository Purpose
+
+This repository was built to demonstrate practical DevOps engineering skills through real-world cloud deployment automation and scalable infrastructure management
